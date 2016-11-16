@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Page3";
+}
+
+<h2>Page3</h2>
+
+<p>Enter the loan amount, interest rate and term length. Then you can get the monthly payment and sum of payments.</p>
+
+<form method="post">
+    <label for="loan">Loan Amount</label>
+    <input type="number" step="0.01" name="loan" value="" />
+    <label for="rate">Interest Rate</label>
+    <input type="number" step="0.000001" name="rate" value="" />
+    <label for="length">Term Length</label>
+    <input type="number" name="length" value="" />
+    <input type="submit" value="Enter" />
+</form>
+
+<p>@ViewBag.message</p>

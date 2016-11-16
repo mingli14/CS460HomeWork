@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Page2";
+}
+
+<h2>Page2</h2>
+
+<p>Enter the username and the password to create a new account.</p>
+
+<form method="post">
+    <label for="username">Username</label>
+    <input type="text" name="username" value="" />
+    <label for="password">Password</label>
+    <input type="password" name="password" maxlength="100" />
+    <input type="submit" value="Create" />
+</form>
+
+<p>@ViewBag.message</p>
