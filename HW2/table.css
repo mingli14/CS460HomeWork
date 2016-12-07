@@ -1,0 +1,10 @@
+table { border: 1px solid #3399CC;
+    border-spacing: 0;
+    width: 80%;
+}
+
+td { text-align: center;
+}
+
+tr:nth-of-type(odd) { background-color: #F5FAFC;
+}
