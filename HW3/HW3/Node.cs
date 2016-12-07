@@ -8,19 +8,32 @@ namespace HW3
 {
     class Node
     {
-        public Object data; // The payload
-        public Node next;   // Reference to the next Node in the chain
-
+        /// <summary>
+        /// The constructor of the class Nade
+        /// </summary>
         public Node()
         {
             data = null;
             next = null;
         }
 
+        /// <summary>
+        /// The constructor of the class Nade
+        /// </summary>
         public Node(Object data, Node next)
         {
             this.data = data;
             this.next = next;
         }
+
+        /// <summary>
+        /// Store the data
+        /// </summary>
+        public Object data { get; set; } // The payload
+
+        /// <summary>
+        /// Connect to the next node.
+        /// </summary>
+        public Node next { get; set; } // Reference to the next Node in the chain
     }
 }

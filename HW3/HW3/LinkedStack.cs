@@ -8,13 +8,20 @@ namespace HW3
 {
     class LinkedStack
     {
+        //The Node is used to store the data
         private Node top;
 
+        //The constructor of the class LinkedStack
         public LinkedStack()
         {
             top = null; // Empty stack condition
         }
 
+        /// <summary>
+        /// Get the data at the top.
+        /// </summary>
+        /// <param name="newItem">The data at the top</param>
+        /// <returns>The data at the top</returns>
         public Object push(Object newItem)
         {
             if (newItem == null)
@@ -26,6 +33,10 @@ namespace HW3
             return newItem;
         }
 
+        /// <summary>
+        /// Get the data at the top.
+        /// </summary>
+        /// <returns>The data at the top</returns>
         public Object pop()
         {
             if (isEmpty())
@@ -37,6 +48,10 @@ namespace HW3
             return topItem;
         }
 
+        /// <summary>
+        /// Get the data at the top.
+        /// </summary>
+        /// <returns>The data at the top</returns>
         public Object peek()
         {
             if (isEmpty())
@@ -46,11 +61,18 @@ namespace HW3
             return top.data;
         }
 
+        /// <summary>
+        /// Check whether the stack is empty.
+        /// </summary>
+        /// <returns></returns>
         public bool isEmpty()
         {
             return top == null;
         }
 
+        /// <summary>
+        /// Clear the stack.
+        /// </summary>
         public void clear()
         {
             top = null;
