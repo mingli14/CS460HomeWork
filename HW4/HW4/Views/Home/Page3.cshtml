@@ -9,12 +9,17 @@
 
 <form method="post">
     <label for="loan">Loan Amount</label>
+    @*Input the Loan Amount *@
     <input type="number" step="0.01" name="loan" value="" />
     <label for="rate">Interest Rate</label>
+    @*Input the Interest Rate *@
     <input type="number" step="0.000001" name="rate" value="" />
     <label for="length">Term Length</label>
+    @*Input the Term Length *@
     <input type="number" name="length" value="" />
+    @*Create the submit button *@
     <input type="submit" value="Enter" />
 </form>
 
+@*Show the message from the HomeController *@
 <p>@ViewBag.message</p>

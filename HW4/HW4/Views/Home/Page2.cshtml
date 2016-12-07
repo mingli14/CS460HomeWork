@@ -9,10 +9,14 @@
 
 <form method="post">
     <label for="username">Username</label>
+    @*Input the Username *@
     <input type="text" name="username" value="" />
     <label for="password">Password</label>
+    @*Input the Password *@
     <input type="password" name="password" maxlength="100" />
+    @*Create the submit button *@
     <input type="submit" value="Create" />
 </form>
 
+@*Show the message from the HomeController *@
 <p>@ViewBag.message</p>

@@ -16,6 +16,9 @@ namespace HW4.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Create page1.
+        /// </summary>
         public ActionResult Page1()
         {
             Debug.WriteLine(Request.RawUrl);
@@ -27,6 +30,9 @@ namespace HW4.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Get the data from the page2
+        /// </summary>
         [HttpGet]
         public ActionResult Page2()
         {
@@ -35,6 +41,9 @@ namespace HW4.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Post the data to the page2
+        /// </summary>
         [HttpPost]
         public ActionResult Page2(FormCollection form)
         {
@@ -44,6 +53,9 @@ namespace HW4.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Get the data from the page3
+        /// </summary>
         [HttpGet]
         public ActionResult Page3()
         {
@@ -52,6 +64,9 @@ namespace HW4.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Post the data to the page3
+        /// </summary>
         [HttpPost]
         public ActionResult Page3(FormCollection form)
         {
@@ -63,6 +78,9 @@ namespace HW4.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Change the data in the controller.
+        /// </summary>
         private void ShowRequest()
         {
             Debug.WriteLine("\t" + Request.RawUrl);
