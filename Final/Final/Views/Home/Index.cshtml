@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<Final.Views.Shared.Genres>
+
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -6,3 +8,16 @@
     <h1>Final</h1>
     <p>Welcome to the Final.</p>
 </div>
+
+@foreach (var item in Model)
+{
+    <div>@Html.DisplayFor(modelItem => item.Name)</div>
+    <form>
+        <input id="request" type="button" name="request" value="@Html.DisplayFor(modelItem => item.Name)" />
+    </form>
+}
+
+@section PageScripts
+{
+    <script type="text/javascript" src="~/Scripts/table.js"></script>
+}
