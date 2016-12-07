@@ -1,9 +1,11 @@
+//You can just input the number.
 function onlyNum() { 
 if(!(event.keyCode==46)&&!(event.keyCode==8)&&!(event.keyCode==37)&&!(event.keyCode==39)) 
 if(!((event.keyCode>=48&&event.keyCode<=57)||(event.keyCode>=96&&event.keyCode<=105))) 
 event.returnValue=false; 
 } 
 
+//Add the head of the table.
 function addThead() {
     "use strict";
     var tab = $("<table>", {
@@ -19,6 +21,7 @@ function addThead() {
 	return tab;
 }
 
+//Add one row of the table if the number is higher. 
 function addHighRow(num, time) {
     "use strict";
     var tab = $("<table>", {
@@ -37,6 +40,7 @@ function addHighRow(num, time) {
     return tab;
 }
 
+//Add one row of the table if the number is lower. 
 function addLowRow(num, time) {
     "use strict";
     var tab = $("<table>", {
@@ -55,6 +59,7 @@ function addLowRow(num, time) {
     return tab;
 }
 
+//Add one row of the table if the number is right. 
 function addEqualRow(num, time) {
     "use strict";
     var tab = $("<table>", {
@@ -73,9 +78,12 @@ function addEqualRow(num, time) {
     return tab;
 }
 
+//Generate the random number.
 var randomNumber = parseInt(Math.random() * 100) + 1;
 var i = 0;
+//Add the head of the table.
 $("#theTable").append(addThead());
+//Add one row of the table every time the user clicks the submit button.
 $("#generateTable").submit(function (event) {
     event.preventDefault();
     var num = $("#dateSelect").val().trim();
