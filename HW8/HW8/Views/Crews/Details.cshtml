@@ -1,0 +1,42 @@
+﻿@model HW8.Models.Crews
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Crews</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Pirates.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pirates.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ships.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ships.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Booty)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Booty)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
