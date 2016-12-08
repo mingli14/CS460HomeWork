@@ -12,6 +12,7 @@ namespace HW5.DAL
 
         public RequestCollection()
         {
+            //Create one request in the list.
             Requests = new List<Request>
             {
                 new Request { FirstName = "John", LastName = "Doe", DOB = new DateTime(1890,10,31), PhoneNumber = "5031112345", Advisor = "Tom", CatalogYear = new DateTime(2014,9,28), Email = "Johnd@gmail.com", Major  = "CS", Minor = "Math", VNumber = "00031654" }
