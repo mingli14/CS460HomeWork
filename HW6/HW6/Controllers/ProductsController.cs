@@ -10,6 +10,11 @@ namespace HW6.Controllers
     {
         public int PageCount { get; set; } = 9;
 
+        public ActionResult Index()
+        {
+            return View();
+        }
+
         // GET: Products
         public ActionResult Category(int id, int page = 1)
         {
