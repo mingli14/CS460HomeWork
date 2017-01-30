@@ -135,33 +135,48 @@ def checkBoard(a, b, rows, cols, row, col):
         else:
             return False
 
-def setBoard(a, b, nrows, ncols, ur, uc, i, total):
+def setBoard(a, b, nrows, ncols, ur, uc, i, total, c):
     b[ur[i], uc[i]] = 0
     totalCopy = total
     total = total - 1
     if(checkBoard(a, b, nrows, ncols, ur[i], uc[i])):
         if total == 0:
-            print "Find the first solution for the problem:"
-            print "*** 0 means the empty square or the square with data! ***"
-            print "*** 1 means the bomb! ***"
-            print b
-            exit()
+            c[0] = c[0] + 1
+            c[1] = c[1] -1
+            if c[1] == 1:
+                print "Find the first solution for the problem:"
+                print "*** 0 means the empty square or the square with data! ***"
+                print "*** 1 means the bomb! ***"
+                print b
+            if c[1] == 0:
+                print "Find the second solution for the problem:"
+                print "*** 0 means the empty square or the square with data! ***"
+                print "*** 1 means the bomb! ***"
+                print b
         else:
-            setBoard(a, b, nrows, ncols, ur, uc, i + 1, total)
+            setBoard(a, b, nrows, ncols, ur, uc, i + 1, total, c)
 
     b[ur[i], uc[i]] = 1
     if (checkBoard(a, b, nrows, ncols, ur[i], uc[i])):
         if total == 0:
-            print "Find the first solution for the problem:"
-            print "0 means the empty square or the square with data"
-            print "1 means the bomb"
-            print b
-            exit()
+            c[0] = c[0] + 1
+            c[1] = c[1] - 1
+            if c[1] == 1:
+                print "Find the first solution for the problem:"
+                print "*** 0 means the empty square or the square with data! ***"
+                print "*** 1 means the bomb! ***"
+                print b
+            if c[1] == 0:
+                print "Find the second solution for the problem:"
+                print "*** 0 means the empty square or the square with data! ***"
+                print "*** 1 means the bomb! ***"
+                print b
         else:
-            setBoard(a, b, nrows, ncols, ur, uc, i + 1, total)
+            setBoard(a, b, nrows, ncols, ur, uc, i + 1, total, c)
 
     b[ur[i], uc[i]] = -1
     total = total + 1
+
 
 
 def main(filename):
@@ -176,12 +191,19 @@ def main(filename):
         for i in range(nrows):
             board[i,:] = list(map(convertToInt,f.readline().split()))
     print(board)
+    c = [0,2]
     boardBoolean = np.copy(board)
     boardBoolean[boardBoolean != -1] = 0
     total = -np.sum(boardBoolean[:,:])
     (ur, uc) = np.where(boardBoolean == -1)
-    setBoard(board, boardBoolean, nrows, ncols, ur, uc, 0, total)
-    print "Can't find the solution for the problem."
+    setBoard(board, boardBoolean, nrows, ncols, ur, uc, 0, total, c)
+    if(c[0] ==0):
+        print "Can't find the solution for the problem."
+    elif(c[0] == 1):
+        print "There is only one solution for the problem"
+    else:
+        print "There are more than one solutions and"
+        print "the number of the solutions is " + str(c[0])
 
 
 
